@@ -19,7 +19,7 @@ resource "aws_subnet" "private" {
     }
 }
 
-resource "aws_internet_gateway" "igw"  {
-    vpc_id = vpc_id.public.vpc_id
+# resource "aws_internet_gateway" "igw"  {
+#     vpc_id = vpc_id.public.vpc_id
 
-}
+# }
