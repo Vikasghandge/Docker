@@ -11,4 +11,6 @@ resource "aws_subnet" "public" {
     }
 }
 
-resource "aws"
+resource "aws_subnet" "private" {
+    
+}
