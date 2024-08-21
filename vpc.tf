@@ -18,3 +18,5 @@ resource "aws_subnet" "private" {
         name = "my-private"
     }
 }
+
+resource "aws_internet"
