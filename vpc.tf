@@ -13,5 +13,5 @@ resource "aws_subnet" "public" {
 
 resource "aws_subnet" "private" {
     vpc_id = vpc_id.private.vpc_id
-    
+    cidr_block = 192.168.1.0/24
 }
