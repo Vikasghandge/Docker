@@ -19,4 +19,4 @@ resource "aws_subnet" "private" {
     }
 }
 
-resource "aws_i"  {}
+resource "awa_inter"  {}
