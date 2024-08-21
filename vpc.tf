@@ -12,5 +12,5 @@ resource "aws_subnet" "public" {
 }
 
 resource "aws_subnet" "private" {
-    
+    vpc_id = vpc_id.private
 }
