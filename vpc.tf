@@ -4,7 +4,7 @@ resource "aws_vpc" "my-vpc" {
 }
 
 resource "aws_subnet" "public" {
-    vpc_id = aws_vpc.p
+    vpc_id = aws_vpc.public.id 
     cidr_block = 192.168.0.0/24
     tags = {
         name = "my_vpc"
