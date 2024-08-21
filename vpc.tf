@@ -3,4 +3,4 @@ resource "aws_vpc" "my-vpc" {
 
 }
 
-resource
+resource "aws_subnet" "public"
