@@ -19,4 +19,4 @@ resource "aws_subnet" "private" {
     }
 }
 
-resource "awa_inter"  {}
+resource "awa_internetgateway" "igw"  {}
