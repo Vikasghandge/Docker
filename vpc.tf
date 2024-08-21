@@ -3,4 +3,6 @@ resource "aws_vpc" "my-vpc" {
 
 }
 
-resource "aws_subnet" "public"
+resource "aws_subnet" "public" {
+    cidr_block = 192.168.
+}
