@@ -5,8 +5,8 @@ module "example_instance" {
     instance_type = "t2.micro"
     instance_name = "my-example-instance"
 
-    output "ins" {
-        value = ""
+    output "instance_id" {
+        value = "mo"
     }
     
 }
