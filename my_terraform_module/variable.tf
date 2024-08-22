@@ -4,5 +4,6 @@ variable "ami_id" {
 }
 
 variable "instance_type" {
-    des
+    description = "type of instance"
+    
 }
