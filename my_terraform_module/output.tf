@@ -1,3 +1,3 @@
-output "name" {
+output "instance_id" {
     value = ""
 }
