@@ -1,3 +1,3 @@
 variable "ami_id" {
-    description
+    description = "the ami id use for "
 }
