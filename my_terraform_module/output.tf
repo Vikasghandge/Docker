@@ -4,6 +4,6 @@ output "instance_id" {
 }
 
 output "public_ip" {
-    description
+    description = the ip of public instance
     value = ""
 }
