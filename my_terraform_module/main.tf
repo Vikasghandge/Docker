@@ -12,4 +12,8 @@ provider "aws" {
 #  }
 # }
 
-mo
+module "example_instance" {
+   
+   source = ""
+   
+}
