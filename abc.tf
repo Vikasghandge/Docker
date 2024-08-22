@@ -6,4 +6,5 @@ resource "aws_instance" "sever_1" {
     ami =
     instance_type =
     key_name = 
+    tags = 
 }
