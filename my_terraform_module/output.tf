@@ -1,4 +1,4 @@
 output "instance_id" {
-    description = ""
-    value = ""
+    description = " ec2 id"
+    value = "aws_instance"
 }
