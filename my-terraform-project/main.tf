@@ -6,7 +6,7 @@ module "example_instance" {
     instance_name = "my-example-instance"
 
     output "instance_id" {
-        value = "mo"
+        value = "module.example_instance.instance"
     }
     
 }
