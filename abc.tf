@@ -7,4 +7,7 @@ resource "aws_instance" "sever_1" {
     instance_type =
     key_name = 
     tags = 
+    {
+        name = 
+    }
 }
