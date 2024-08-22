@@ -11,5 +11,6 @@ variable "instance_type" {
 
 variable "instance_name" {
     description = "the name of instance"
-    
+    type = string
+    default =
 }
