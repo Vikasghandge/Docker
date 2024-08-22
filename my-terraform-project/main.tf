@@ -10,7 +10,7 @@ module "example_instance" {
         value = "module.example_instance.instance_id"
     }
     
-    output "name" {
-        value = ""
+    output "public_ip" {
+        value = "module.example_instance.public_ip"
     }
 
