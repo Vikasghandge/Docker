@@ -1,3 +1,4 @@
 resource "aws_instance" "example " {
- ami = 
+ ami = var.ami.id
+ 
 }
