@@ -4,10 +4,10 @@ module "example_instance" {
     ami_id = "ami-0522ab6e1ddcc7055"
     instance_type = "t2.micro"
     instance_name = "my-example-instance"
+    }
 
     output "instance_id" {
         value = "module.example_instance.instance_id"
     }
     
-    
-}
+
