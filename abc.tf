@@ -4,5 +4,6 @@ provider "aws" {
 
 resource "aws_instance" "sever_1" {
     ami =
-    instance_
+    instance_type =
+    key_name = 
 }
