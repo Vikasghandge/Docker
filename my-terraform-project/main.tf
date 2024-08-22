@@ -1,4 +1,4 @@
 module "example_instance" {
-    source = ""
+    source = "./my-terraform-"
     
 }
