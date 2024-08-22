@@ -2,6 +2,7 @@ module "example_instance" {
     source = "./my-terraform-module"
 
     ami_id = "ami-0522ab6e1ddcc7055"
-    instance_type = 
+    instance_type = "t2.micro"
+    is
     
 }
