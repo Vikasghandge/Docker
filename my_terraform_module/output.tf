@@ -3,6 +3,7 @@ output "instance_id" {
     value = "aws_instance.example.id"
 }
 
-output "name" {
+output "public_ip" {
+    description
     value = ""
 }
