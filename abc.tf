@@ -3,5 +3,6 @@ provider "aws" {
 }
 
 resource "aws_instance" "sever_1" {
-    ami
+    ami =
+    instance_
 }
