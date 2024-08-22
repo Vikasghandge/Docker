@@ -2,4 +2,4 @@ provider "aws" {
     region = "ap-south-1"
 }
 
-resource ""
+resource "aws_instance" "server"
