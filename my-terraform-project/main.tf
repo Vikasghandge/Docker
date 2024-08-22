@@ -1,4 +1,5 @@
 module "example_instance" {
-    source = "./my-terraform-"
+    source = "./my-terraform-module"
+    
     
 }
