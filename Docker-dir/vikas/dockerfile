@@ -1,0 +1,11 @@
+FROM ubuntu:latest
+
+LABEL images="frontend-static"
+RUN  apt update
+RUN install apache2 unzip -y
+COPY source dest
+
+
+
+
+CMD [ "npm", "start" ]
