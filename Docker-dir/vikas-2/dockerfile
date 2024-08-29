@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-LABEL image="frontend-setup"
+LABEL image="front-setup"
 RUN apt update 
 RUN apt-get install nginx unzip -y
 WORKDIR /var/www/html/
