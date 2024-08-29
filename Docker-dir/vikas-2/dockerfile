@@ -7,7 +7,7 @@ WORKDIR /var/www/html/
 RUN unzip carvilla.zip
 RUN mv carvilla-v1.0/* .
 EXPOSE 80
-CMD [ "nginx" "-g" "daemonoff"]
+CMD [ "nginx" "-g" "daemon off;"]
 
 
 
