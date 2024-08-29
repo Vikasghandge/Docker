@@ -27,5 +27,6 @@ COPY contex.xml  apache-tomcat-9.0.93/conf/
 
 # adding execuation permissions to catalina.sh file
 RUN chmod +rwx /opt/Apache-tomcat-9.0.93/bin/* .sh  
- ADD source dest
+
+
 
