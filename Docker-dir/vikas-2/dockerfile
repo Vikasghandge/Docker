@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 LABEL image="frontend-setup"
 RUN apt update 
-RUN apt-getinstall nginx unzip -y
+RUN apt-get install nginx unzip -y
 COPY carvilla.zip /var/www/html
 WORKDIR /var/www/html/
 RUN unzip carvilla.zip
