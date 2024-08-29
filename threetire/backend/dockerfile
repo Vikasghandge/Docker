@@ -20,6 +20,6 @@ unzip apache-tomcat-9.0.93.zip
 ADD https://s3-us-west-2.amazonaws.com/studentapi-cit/student.war  apache-tomcat-9.0.93/webapps/
 
 #adding  mysql connector into /lib
-ADD https://s3-us-west-2.amazonaws.com/studentapi-cit/mysql-c
+ADD https://s3-us-west-2.amazonaws.com/studentapi-cit/mysql-connector.ja
 
 
