@@ -1,2 +1,2 @@
-FROM ubuntu:latest    #choosing base image 
+FROM ubuntu:latest   
 LABEL purpose="backend"
