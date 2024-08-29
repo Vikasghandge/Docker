@@ -8,3 +8,4 @@ LABEL purpose="backend"
 # change directory
 WORKDIR /opt
 
+ADD source dest
