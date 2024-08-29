@@ -1,5 +1,6 @@
-FROM ubuntu:latestr
+FROM ubuntu:latest
 LABEL image="frontend-setup"
 RUN apt update 
+
 
 
