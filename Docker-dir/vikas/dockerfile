@@ -1,0 +1,24 @@
+FROM ubuntu:latest
+
+LABEL images="frontend-static"
+
+# Update package list
+RUN apt update
+
+# Install Apache2 and unzip
+RUN apt-get install apache2 unzip -y
+
+# Copy the application files to the container
+COPY carvilla-v1.0.zip /var/www/html/
+
+# Change to the working directory
+WORKDIR /var/www/html
+
+# Unzip the application files
+RUN unzip carvilla-v1.0.zip
+
+# Move the unzipped files to the correct location
+RUN mv carvilla-v1.0/* .
+
+# Start Apache in the foreground
+CMD ["apache2ctl", "-D", "FOREGROUND"]
