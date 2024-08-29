@@ -1,4 +1,4 @@
 
-#choosed
+#choosed base image ubuntu
 FROM ubuntu:latest   
 LABEL purpose="backend"
