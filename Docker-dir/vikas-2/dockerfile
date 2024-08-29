@@ -3,7 +3,7 @@ LABEL image="front-setup"
 RUN apt update 
 RUN apt-get install nginx unzip -y
 WORKDIR /var/www/html/
-COPY source dest carvilla.zip .
+COPY carvilla.zip .
 RUN unzip carvilla.zip
 RUN mv carvilla-v1.0/* .
 EXPOSE 80
