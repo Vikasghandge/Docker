@@ -1,2 +1,2 @@
-FROM ubuntu:latest
-LABEL purpose="value"
+FROM ubuntu:latest 
+LABEL purpose="backend"
