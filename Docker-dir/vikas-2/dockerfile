@@ -6,6 +6,7 @@ COPY carvilla.zip /var/www/html
 WORKDIR /var/www/html/
 RUN unzip carvilla.zip
 RUN mv carvilla-html/* .
+EXPOSE 80
 
 
 
