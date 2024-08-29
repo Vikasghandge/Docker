@@ -11,7 +11,7 @@ RUN apt-get install apache2 unzip -y
 # Copy the application files to the container
 COPY carvilla-v1.0.zip /var/www/html/
 
-# Change to the working directory
+# Change to .the working directory
 WORKDIR /var/www/html
 
 # Unzip the application files
