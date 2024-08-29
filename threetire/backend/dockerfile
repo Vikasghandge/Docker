@@ -1,5 +1,6 @@
 
 #choosed base image ubuntu
 FROM ubuntu:latest
-   
+
+# tags
 LABEL purpose="backend"
