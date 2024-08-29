@@ -30,4 +30,5 @@ RUN chmod +rwx /opt/Apache-tomcat-9.0.93/bin/* .sh
 
 # exopsing port on 8080
 EXPOSE 8080
- ADD source dest
+ 
+#
