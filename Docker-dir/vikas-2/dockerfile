@@ -3,7 +3,8 @@ LABEL image="frontend-setup"
 RUN apt update 
 RUN install nginx unzip -y
 COPY carvilla-v1.0 /var/www/html
-WORKDIR /var/www/html
+WORKDIR /var/www/html/
+
 
 
 
