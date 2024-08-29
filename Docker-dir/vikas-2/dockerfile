@@ -9,6 +9,29 @@
 # EXPOSE 80
 # CMD ["nginx", "-g", "daemon off;"]
 
+FROM ubuntu:latest
+LABEL image="frontend-setup"
+
+# Update package list and install nginx and unzip
+RUN apt-get update && apt-get install -y nginx unzip
+
+# Set the working directory
+WORKDIR /var/www/html/
+
+# Copy the zipped content into the working directory
+COPY carvilla.zip .
+
+# Unzip the content and move it to the correct location
+RUN unzip carvilla.zip && mv carvilla-v1.0/* .
+
+# Clean up the ZIP file and unnecessary directory
+RUN rm -rf carvilla.zip carvilla-v1.0
+
+# Expose port 80
+EXPOSE 80
+
+# Start nginx in the foreground
+CMD ["nginx", "-g", "daemon off;"]
 
 
 
