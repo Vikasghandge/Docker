@@ -5,7 +5,7 @@ RUN apt-get install nginx unzip -y
 COPY carvilla.zip /var/www/html
 WORKDIR /var/www/html/
 RUN unzip carvilla.zip
-RUN mv carvilla-html/* .
+RUN mv carvilla/* .
 EXPOSE 80
 CMD [ "systemctl" "g" "daemon-off"]
 
