@@ -8,4 +8,4 @@ LABEL purpose="backend"
 # change directory
 
 # run essential commands
-RUN apt install
+WORKDIR /opt
