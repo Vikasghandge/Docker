@@ -1,3 +1,4 @@
 FROM ubuntu:lastest
 LABEL game="playing-game"
-RUN  apt 
+RUN  apt update
+RUN command
