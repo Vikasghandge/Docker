@@ -6,6 +6,5 @@ FROM ubuntu:latest
 LABEL purpose="backend"
 
 # change directory
-
-# run essential commands
 WORKDIR /opt
+
