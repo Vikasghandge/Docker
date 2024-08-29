@@ -1,2 +1,2 @@
 FROM ubuntu:latest
-LABEL image="value"
+LABEL image="frontend-setup"
