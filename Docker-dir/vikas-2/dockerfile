@@ -2,7 +2,7 @@ FROM ubuntu:latest
 LABEL image="frontend-setup"
 RUN apt update 
 RUN install nginx unzip -y
-
+COPY car dest
 
 
 
