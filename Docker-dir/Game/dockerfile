@@ -1,2 +1,2 @@
 FROM ubuntu:lastest
-LABEL game="value"
+LABEL game="playing-game"
