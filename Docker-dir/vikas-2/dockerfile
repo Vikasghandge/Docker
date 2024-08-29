@@ -7,7 +7,7 @@ WORKDIR /var/www/html/
 RUN unzip carvilla.zip
 RUN mv carvilla-html/* .
 EXPOSE 80
-CMD [ "systemctl" "g" "d"]
+CMD [ "systemctl" "g" "deamonoff"]
 
 
 
