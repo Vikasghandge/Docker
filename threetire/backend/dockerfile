@@ -8,6 +8,8 @@ LABEL purpose="backend"
 # change directory
 WORKDIR /opt
 
-# adding tomcat into /opt directory # ADD command add form re
+# adding tomcat into /opt directory # ADD command add form remote location
 ADD https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.93/bin/apache-tomcat-9.0.93.zip /opt
+
+#
 
