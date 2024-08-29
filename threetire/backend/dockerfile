@@ -22,6 +22,6 @@ ADD https://s3-us-west-2.amazonaws.com/studentapi-cit/student.war  apache-tomcat
 #adding  mysql connector into /lib
 ADD https://s3-us-west-2.amazonaws.com/studentapi-cit/mysql-connector.jar apache-tomcat-9.0.93/lib
 
-COPY contex.xml  apache-tomcat-9.0.93
+COPY contex.xml  apache-tomcat-9.0.93/conf/
 
 
