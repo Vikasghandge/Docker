@@ -1,0 +1,13 @@
+# Use an official Nginx image as a base
+FROM nginx:alpine
+
+# Copy the HTML, CSS, and JS files to the Nginx directory
+COPY traffic\ light.html /usr/share/nginx/html/index.html
+COPY traffic\ light.css /usr/share/nginx/html/
+COPY traffic\ light.js /usr/share/nginx/html/
+
+# Expose port 80 to access the web server
+EXPOSE 80
+
+# Start Nginx when the container launches
+CMD ["nginx", "-g", "daemon off;"]
