@@ -1,0 +1,20 @@
+# Use an official Nginx image as a base
+FROM nginx:alpine
+
+# Create the /var/www/html directory
+RUN mkdir -p /var/www/html
+
+# Copy the renamed HTML, CSS, and JS files to /var/www/html
+COPY  traffic_light.css /var/www/html/index.html
+COPY traffic_light.css /var/www/html/
+COPY traffic_light.js /var/www/html/
+
+# Update Nginx configuration to use /var/www/html as the web root
+RUN sed -i 's|/usr/share/nginx/html|/var/www/html|g' /etc/nginx/conf.d/default.conf
+
+# Expose port 80 to access the web server
+EXPOSE 80
+
+# Start Nginx when the container launches
+CMD ["nginx", "-g", "daemon off;"]
+
