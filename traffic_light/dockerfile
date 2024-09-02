@@ -1,0 +1,10 @@
+FROM nginx:alpine
+COPY traffic_light.html /usr/share/nginx/html/index.html
+COPY traffic_light.css /usr/share/nginx/html/
+COPY traffic_light.js /usr/share/nginx/html/
+
+EXPOSE 80
+
+#CMD ["nginx", "-g", "dameon off;"]
+
+CMD ["nginx", "-g", "daemon off;"]
