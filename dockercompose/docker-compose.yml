@@ -10,18 +10,18 @@ services:
       networks:
          - myappnetwork
 
-  nginxfrontendcontwo:
-      build: . 
-      network_mode: host
-      container_name: frontend2
-      volumes: 
-        - myapp2:/usr/share/nginx/html/
-      networks:
-         - myappnetwork
+#   nginxfrontendcontwo:
+#       build: . 
+#       network_mode: host
+#       container_name: frontend2
+#       volumes: 
+#         - myapp2:/usr/share/nginx/html/
+#       networks:
+#          - myappnetwork
 
-volumes:   # Will create a volume for you.
-      myapp:
-      myapp2:
+# volumes:   # Will create a volume for you.
+#       myapp:
+#       myapp2:
 
-networks:
-  myappnetwork:
+# networks:
+#   myappnetwork:
