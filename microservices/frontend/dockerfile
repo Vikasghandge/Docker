@@ -1,0 +1,18 @@
+# Use an official Ubuntu image as a base
+FROM ubuntu:latest
+
+# Install Apache web server
+RUN apt-get update && apt-get install -y apache2
+
+# Set the working directory in the container
+WORKDIR /var/www/html
+
+# Copy the frontend.html file into the container
+COPY frontend.html /var/www/html
+
+# Expose port 80
+EXPOSE 80
+
+# Start Apache web server when the container launches
+CMD ["apachectl", "-D", "FOREGROUND"]
+
