@@ -21,7 +21,7 @@ COPY todo6.css /usr/share/nginx/html/
 COPY todo6.js /usr/share/nginx/html/
 
 # Expose the port on which nginx is running
-EXPOSE 80
+EXPOSE 8080
 
 # Start nginx using JSON array syntax
 CMD ["nginx", "-g", "daemon off;"]
