@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = 'ghandgevikas/my-docker-repo:traffic1'
-        CONTAINER_NAME = 'my-new-traffic-light-container'
+        CONTAINER_NAME = 'container'
     }
 
     stages {
