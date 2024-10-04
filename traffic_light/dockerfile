@@ -1,4 +1,4 @@
-FROM nginx:latest
+FROM nginx:alpine
 
 # Copy your HTML file to the correct location
 WORKDIR /usr/share/nginx/html
