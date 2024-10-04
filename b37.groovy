@@ -10,7 +10,7 @@ pipeline {
         stage('Pull Docker Image') {
             steps {
                 script {
-                    sh "docker pull ${DOCKER_IMAGE}"
+                    sh "/usr/bin/docker pull ${DOCKER_IMAGE}"  // Use full path to Docker
                 }
             }
         }
@@ -21,8 +21,8 @@ pipeline {
                     // Stop and remove the existing container if it exists
                     sh """
                     if [ \$(docker ps -aq -f name=${CONTAINER_NAME}) ]; then
-                        docker stop ${CONTAINER_NAME}
-                        docker rm ${CONTAINER_NAME}
+                        /usr/bin/docker stop ${CONTAINER_NAME}  // Use full path to Docker
+                        /usr/bin/docker rm ${CONTAINER_NAME}    // Use full path to Docker
                     fi
                     """
                 }
@@ -33,7 +33,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                    docker run -d --name ${CONTAINER_NAME} -p 8082:80 ${DOCKER_IMAGE}
+                    /usr/bin/docker run -d --name ${CONTAINER_NAME} -p 8082:80 ${DOCKER_IMAGE}  // Use full path to Docker
                     """
                 }
             }
@@ -42,7 +42,7 @@ pipeline {
         stage('Cleanup') {
             steps {
                 script {
-                    sh "docker ps -a"  // List running containers for confirmation
+                    sh "/usr/bin/docker ps -a"  // Use full path to Docker for listing containers
                 }
             }
         }
