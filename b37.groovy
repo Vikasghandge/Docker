@@ -21,8 +21,8 @@ pipeline {
                     // Stop and remove the existing container if it exists
                     sh """
                     if [ \$(docker ps -aq -f name=${CONTAINER_NAME}) ]; then
-                        /usr/bin/docker stop ${CONTAINER_NAME}  // Use full path to Docker
-                        /usr/bin/docker rm ${CONTAINER_NAME}    // Use full path to Docker
+                        /usr/bin/docker stop ${CONTAINER_NAME}  
+                        /usr/bin/docker rm ${CONTAINER_NAME}    
                     fi
                     """
                 }
