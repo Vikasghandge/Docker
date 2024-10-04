@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = ''
+        DOCKER_IMAGE = 'ghandgevikas/my-docker-repo:traffic-light'
         CONTAINER_NAME = 'my-new-container'
     }
 
