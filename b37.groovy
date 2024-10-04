@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'ghandgevikas/my-docker-repo:todo'
-        CONTAINER_NAME = 'my-container'
+        DOCKER_IMAGE = 'ghandgevikas/my-docker-repo:trafficimage'
+        CONTAINER_NAME = 'my-new-container'
     }
 
     stages {
