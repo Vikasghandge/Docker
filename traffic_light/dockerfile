@@ -1,7 +1,7 @@
 FROM nginx:latest
 
 # Copy your HTML file to the correct location
-WORKDIR /
+WORKDIR /usr/share/nginx/html
 COPY traffic_light.html /usr/share/nginx/html/index.html
 
 # Expose port 80
