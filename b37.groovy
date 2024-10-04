@@ -33,7 +33,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                    /usr/bin/docker run -d --name ${CONTAINER_NAME} -p 80:80 ${DOCKER_IMAGE}  // Use full path to Docker
+                    /usr/bin/docker run -d --name ${CONTAINER_NAME} -p 80:80 ${DOCKER_IMAGE}  
                     """
                 }
             }
