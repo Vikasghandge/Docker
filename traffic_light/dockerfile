@@ -2,7 +2,7 @@ FROM nginx:alpine
 
 # Copy your HTML file to the correct location
 WORKDIR /usr/share/nginx/html
-COPY traffic_light.html /usr/share/nginx/html/index.html
+COPY traffic_light.html index.html
 
 # Expose port 80
 EXPOSE 80
