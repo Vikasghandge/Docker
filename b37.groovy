@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'ghandgevikas/my-docker-repo'
+        DOCKER_IMAGE = ''
         CONTAINER_NAME = 'my-new-container'
     }
 
