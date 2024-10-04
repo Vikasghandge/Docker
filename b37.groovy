@@ -39,12 +39,12 @@ pipeline {
             }
         }
 
-        stage('Cleanup') {
-            steps {
-                script {
-                    sh "/usr/bin/docker ps -a"  // Use full path to Docker for listing containers
-                }
-            }
-        }
+        // stage('Cleanup') {
+        //     steps {
+        //         script {
+        //             sh "/usr/bin/docker ps -a"  // Use full path to Docker for listing containers
+        //         }
+        //     }
+        // }
     }
 }
