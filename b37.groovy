@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = 'ghandgevikas/my-docker-repo:b37'
-        CONTAINER_NAME = 'container'
+        CONTAINER_NAME = 'container-1'
     }
 
     stages {
