@@ -33,7 +33,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                    docker run -d --name ${CONTAINER_NAME} -p 8082:8080 ${DOCKER_IMAGE}
+                    docker run -d --name ${CONTAINER_NAME} -p 8082:80 ${DOCKER_IMAGE}
                     """
                 }
             }
