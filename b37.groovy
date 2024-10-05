@@ -1,60 +1,42 @@
 pipeline {
-    agent any
+    agent any 
 
     environment {
-        DOCKER_IMAGE = 'ghandgevikas/my-docker-repo:b37'
-        CONTAINER_NAME = 'container-1'
+        SONAR_TOKEN = credentials('SONAR_TOKEN') // Jenkins credentials ID for SonarQube token
+        DOCKER_IMAGE = 'ghandgevikas/my-docker-repo:todo' // Your Docker image name
+        DOCKER_REGISTRY = 'your_docker_registry' // Replace with your Docker registry URL
     }
 
     stages {
-        stage('Pull Docker Image') {
+        stage('Build') {
             steps {
                 script {
-                    sh "/usr/bin/docker pull ${DOCKER_IMAGE}"  // Use full path to Docker
+                    // Build the Docker image
+                    sh "docker build -t ${DOCKER_IMAGE} ."
                 }
             }
         }
-
-        stage('Cleanup Existing Container') {
-            steps {
-                script {
-                    // Stop and remove the existing container if it exists
-                    sh """
-                    if [ \$(docker ps -aq -f name=${CONTAINER_NAME}) ]; then
-                        /usr/bin/docker stop ${CONTAINER_NAME}  
-                        /usr/bin/docker rm ${CONTAINER_NAME}    
-                    fi
-                    """
-                }
-            }
-        }
-
-        stage('Deploy Docker Image') {
-            steps {
-                script {
-                    sh """
-                    /usr/bin/docker run -d --name ${CONTAINER_NAME} -p 80:80 ${DOCKER_IMAGE}  
-                    """
-                }
-            }
-        }
-
+        
         stage('SonarQube Analysis') {
             steps {
                 script {
-                    withCredentials([string(credentialsId: 'SONAR_TOKEN', variable: 'SONAR_TOKEN')]) {
-                        // Use the official SonarQube scanner Docker image
-                        sh """
-                        /usr/bin/docker run --rm \
-                        -e SONAR_HOST_URL=http://your-sonarqube-server:9000 \
-                        -e SONAR_LOGIN=\${SONAR_TOKEN} \
-                        sonarsource/sonar-scanner-cli:latest \
-                        -Dsonar.projectKey=your_project_key \
-                        -Dsonar.sources=your_source_code_directory
-                        """
-                    }
+                    // Run SonarQube analysis
+                    sh "sonar-scanner -Dsonar.projectKey=your_project_key -Dsonar.sources=. -Dsonar.host.url=http://your_sonarqube_url -Dsonar.login=${SONAR_TOKEN}"
                 }
             }
         }
+
+        stage('Docker Push') {
+            steps {
+                script {
+                    // Log in to the Docker registry
+                    sh "docker login -u your_username -p your_password ${DOCKER_REGISTRY}" // Use Jenkins credentials here
+                    // Push the Docker image
+                    sh "docker push ${DOCKER_IMAGE}"
+                }
+            }
+        }
+        
+        // Add other stages if necessary...
     }
 }
