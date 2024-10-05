@@ -43,13 +43,14 @@ pipeline {
             steps {
                 script {
                     withCredentials([string(credentialsId: 'SONAR_TOKEN', variable: 'SONAR_TOKEN')]) {
-                        // Perform SonarQube analysis
+                        // Use the official SonarQube scanner Docker image
                         sh """
                         /usr/bin/docker run --rm \
                         -e SONAR_HOST_URL=http://your-sonarqube-server:9000 \
                         -e SONAR_LOGIN=\${SONAR_TOKEN} \
-                        ${DOCKER_IMAGE} \
-                        sonar-scanner
+                        sonarsource/sonar-scanner-cli:latest \
+                        -Dsonar.projectKey=your_project_key \
+                        -Dsonar.sources=your_source_code_directory
                         """
                     }
                 }
