@@ -39,21 +39,12 @@ pipeline {
             }
         }
 
-        stage('SonarQube Analysis') {
-            steps {
-                script {
-                    withCredentials([string(credentialsId: 'SONAR_TOKEN', variable: 'SONAR_TOKEN')]) {
-                        // Perform SonarQube analysis
-                        sh """
-                        /usr/bin/docker run --rm \
-                        -e SONAR_HOST_URL=http://your-sonarqube-server:9000 \
-                        -e SONAR_LOGIN=\${SONAR_TOKEN} \
-                        ${DOCKER_IMAGE} \
-                        sonar-scanner
-                        """
-                    }
-                }
-            }
-        }
+        // stage('Cleanup') {
+        //     steps {
+        //         script {
+        //             sh "/usr/bin/docker ps -a"  // Use full path to Docker for listing containers
+        //         }
+        //     }
+        // }
     }
 }
