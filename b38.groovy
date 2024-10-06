@@ -1,27 +1,22 @@
 pipeline {
     agent any
-
-    tools {
-        // Specify the SonarQube Scanner installation name defined in Jenkins Global Tool Configuration
-        sonarQube 'SonarQube'
-    }
-
     stages {
-        stage('Checkout') {
+        stage('Build') {
             steps {
-                // Checkout code from your version control system (e.g., Git)
-                git 'https://github.com/your-repository/your-project.git'
+                // This stage is for building your project
+                sh 'mvn clean verify'
             }
         }
-
         stage('SonarQube Analysis') {
             steps {
-                script {
-                    // Running SonarQube analysis
-                    withSonarQubeEnv('SonarQube') {
-                        // Use Maven command for Java projects, or change this to match your build tool
-                        sh 'mvn clean verify sonar:sonar'
-                    }
+                // SonarQube analysis using Maven
+                withCredentials([string(credentialsId: 'sonarqube-token', variable: 'SONAR_TOKEN')]) {
+                    sh """
+                    mvn sonar:sonar \
+                      -Dsonar.projectKey=my-project-key \
+                      -Dsonar.host.url=http://13.235.33.149:9000 \
+                      -Dsonar.login=${SONAR_TOKEN}
+                    """
                 }
             }
         }
