@@ -149,8 +149,19 @@ sh '''
         }
     }
 }
+
+
 ```
 
 
+pipline should be like this
 
-                        pipline should be like this 
+
+go to genkins dashboard manage configuration
+make sure maven should be installed on your ec2 insatnce
+
+go to new project select pipeline
+add your pipline and repo url sonarkube credits.
+apply and save then build.
+
+
