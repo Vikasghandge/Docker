@@ -71,3 +71,20 @@ here are running sonarqube using docker container so for that run give command
 it will open interface
 login user name     admin
 password            admin
+
+
+
+go to the quality profile select java name is custom
+
+create your custom project name this prject generate its creadential 
+
+like this 
+
+sh '''
+                            mvn clean verify sonar:sonar \
+                            -Dsonar.projectKey=sonar-project \
+                            -Dsonar.host.url=${SONAR_HOST_URL} \
+                            -Dsonar.login=${SONAR_LOGIN}
+                        '''
+
+                        pipline should be like this 
