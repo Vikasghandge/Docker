@@ -18,3 +18,25 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
                         ```
+
+```
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+                                                                                                         ```
+                                                                                                         
+  now verify docker installed on your ec2 instance 
+  ```
+            docker --version
+                                  ```
+now docker has been sucessfully installed on your ec2
+now need to install sonarqube on your ec2
+here are running sonarqube using docker container so for that run give command
+
+```
+      docker run -d --name sonar -p 9000:9000 sonarqube:lts-community 
+                                                                            ```
+                    ## given command will run sonar qube container on your ec2 
+        check using command 
+
+        ```
+              docker ps 
+                                ```
