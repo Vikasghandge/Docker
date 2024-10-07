@@ -87,4 +87,70 @@ sh '''
                             -Dsonar.login=${SONAR_LOGIN}
                         '''
 
+
+
+
+
+
+
+
+
+       #this is simple pimple example ##
+
+       ```
+       pipeline {
+    agent {
+        docker {
+            image 'maven:3.8.5-jdk-11'
+            args '-v /root/.m2:/root/.m2'
+        }
+    }
+
+    environment {
+        SONAR_HOST_URL = 'http://13.126.98.111:9000'
+        SONAR_LOGIN = 'sqp_7512ec630ea51e940a126573e9a0b3c9c53fd56f'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git url: 'https://github.com/Vikasghandge/Docker.git', branch: 'main'
+            }
+        }
+
+        stage('Build and SonarQube Analysis') {
+            steps {
+                dir('my-project') {
+                    script {
+                        sh '''
+                            mvn clean verify sonar:sonar \
+                            -Dsonar.projectKey=sonar-project \
+                            -Dsonar.host.url=${SONAR_HOST_URL} \
+                            -Dsonar.login=${SONAR_LOGIN}
+                        '''
+                    }
+                }
+            }
+        }
+
+        stage('Archive Artifacts') {
+            steps {
+                archiveArtifacts artifacts: 'my-project/target/*.jar', allowEmptyArchive: true
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Build and SonarQube analysis succeeded!'
+        }
+        failure {
+            echo 'Build or SonarQube analysis failed.'
+        }
+    }
+}
+```
+
+
+
                         pipline should be like this 
