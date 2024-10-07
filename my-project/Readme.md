@@ -48,9 +48,8 @@ here are running sonarqube using docker container so for that run give command
 
 
 
-```
-      docker run -d --name sonar -p 9000:9000 sonarqube:lts-community 
-                                                                            ```
+``` docker run -d --name sonar -p 9000:9000 sonarqube:lts-community 
+ ```
 
 
 
@@ -64,3 +63,11 @@ here are running sonarqube using docker container so for that run give command
         ```
               docker ps 
                                 ```
+
+
+
+###now take your local hostip address and ex localhost:9000
+
+it will open interface
+login user name     admin
+password            admin
