@@ -29,13 +29,10 @@
 
 
 
-
-
-
-FROM nginx:alpine  
+FROM nginx:alpine  # Set nginx alpine as default base image
 WORKDIR /usr/share/nginx/html
 RUN rm -f index.html
 RUN mkdir -p /usr/share/nginx/vr
 COPY . /usr/share/nginx/html/vr
 EXPOSE 80
-CMD [ "nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"]
