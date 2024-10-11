@@ -1,35 +1,4 @@
-# # Use an official nginx image as the base image
-# FROM nginx:alpine
-
-# # Copy the static files to the nginx html directory
-# COPY todo6.html /usr/share/nginx/html/index.html
-# COPY todo6.css /usr/share/nginx/html/
-# COPY todo6.js /usr/share/nginx/html/
-
-# # Expose the port on which nginx is running
-# EXPOSE 80
-
-# # Start nginx using JSON array syntax
-# CMD ["nginx", "-g", "daemon off;"]
-
-# Use an official nginx image as the base image
-# FROM nginx:alpine
-
-# # Copy the static files to the nginx html directory
-# COPY todo6.html /usr/share/nginx/html/index.html
-# COPY todo6.css /usr/share/nginx/html/
-# COPY todo6.js /usr/share/nginx/html/
-
-# # Expose the port on which nginx is running
-# EXPOSE 8080
-
-# # Start nginx using JSON array syntax
-# CMD ["nginx", "-g", "daemon off;"]
-
-
-
-
-FROM nginx:alpine  # Set nginx alpine as default base image
+FROM nginx:alpine
 WORKDIR /usr/share/nginx/html
 RUN rm -f index.html
 RUN mkdir -p /usr/share/nginx/vr
