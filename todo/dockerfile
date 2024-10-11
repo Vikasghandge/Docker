@@ -32,7 +32,7 @@
 
 
 
-FROM nginx:alpine  #set nginx alpine as default base image
+FROM nginx:alpine  
 WORKDIR /usr/share/nginx/html
 RUN rm -f index.html
 RUN mkdir -p /usr/share/nginx/vr
