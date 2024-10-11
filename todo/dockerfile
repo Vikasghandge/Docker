@@ -1,7 +1,20 @@
 FROM nginx:alpine
-WORKDIR /usr/share/nginx/html
-RUN rm -f index.html
-RUN mkdir -p /usr/share/nginx/vr
+
+# Create the target directory for your application
+RUN mkdir -p /usr/share/nginx/html/vr
+
+# Copy your application files into the container
 COPY . /usr/share/nginx/html/vr
+
+# Change ownership and permissions
+RUN chown -R nginx:nginx /usr/share/nginx/html/vr && \
+    chmod -R 755 /usr/share/nginx/html/vr
+
+# Set the working directory
+WORKDIR /usr/share/nginx/html/vr
+
+# Expose port 80
 EXPOSE 80
+
+# Command to run Nginx in the foreground
 CMD ["nginx", "-g", "daemon off;"]
