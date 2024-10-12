@@ -16,4 +16,7 @@
         - name: nginx
           state: present           
 
-          
+--- 
+  - hosts: all
+    become: yes
+    task:           
