@@ -8,4 +8,5 @@
         state: present
      - name: ensure apache is running
        service: 
-        name: 
+        name: apache2
+        
