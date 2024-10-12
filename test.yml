@@ -23,4 +23,5 @@
       - name: install nginx
          apt:
         - name: nginx
-          state: present        
+          state: present
+          ansible playbook -i inventory install_ngi        
