@@ -6,3 +6,6 @@
            apt:
            name: nginx
            state: present
+
+--- 
+  - hosts: all           
