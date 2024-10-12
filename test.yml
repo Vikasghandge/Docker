@@ -20,4 +20,6 @@
   - hosts: all
     become: yes
     task: 
-      - name:           
+      - name: install nginx
+        apt:
+        name:           
