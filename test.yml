@@ -2,4 +2,6 @@
   - hosts: demo
     become: yes
     tasks:
-     - name: install apache 
+     - name: install apache on your server
+       apt: 
+        
