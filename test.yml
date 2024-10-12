@@ -22,4 +22,5 @@
     task: 
       - name: install nginx
          apt:
-        - name: nginx        
+        - name: nginx
+          state: present        
