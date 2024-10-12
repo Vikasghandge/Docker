@@ -10,4 +10,7 @@
 --- 
   - hosts: all(hostname)
     become: yes
-    task:            
+    task: 
+      - name: install nginx
+        apt: 
+        name: ng           
