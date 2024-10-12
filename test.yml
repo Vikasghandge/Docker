@@ -10,4 +10,4 @@
 --- 
   - hosts: all(hostname)
     become: yes
-               
+    task:            
