@@ -3,4 +3,6 @@
    become: yes
    tasks: 
      - name: install nginx
+       apt: 
+       name: nginx
        
