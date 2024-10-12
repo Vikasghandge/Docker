@@ -4,4 +4,5 @@
     tasks:
      - name: install apache on your server
        apt: 
+        name: apache2
         
