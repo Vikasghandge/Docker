@@ -13,4 +13,5 @@
     task: 
       - name: install nginx
         apt: 
-        name: ng           
+        name: nginx
+        present           
