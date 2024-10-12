@@ -1,4 +1,8 @@
 ---
    hosts: all
    become: yes
-   task
+   task:
+         - name: install nginx
+           apt:
+           name: nginx
+           state: pre
