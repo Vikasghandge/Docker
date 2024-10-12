@@ -8,4 +8,6 @@
            state: present
 
 --- 
-  - hosts: all           
+  - hosts: all(hostname)
+    become: yes
+               
