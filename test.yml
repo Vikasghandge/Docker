@@ -1,4 +1,5 @@
 ---
   - hosts: demo
     become: yes
-    task
+    tasks:
+     - name: 
