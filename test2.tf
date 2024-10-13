@@ -7,6 +7,6 @@ resource "aws_instance" "my-ec2" {
     
 }
 output "ec2-output" {
-    v
+    value = aws_instance.my-ec2
   
 }
