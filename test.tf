@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "example" {
-    ami = "value"
-    instance_type = "value"
+    ami = "value
+"
     
 }
