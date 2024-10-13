@@ -6,6 +6,7 @@ resource "aws_instance" "my-ec2" {
     instance_type = "value"
     
 }
-output "name" {
+output "ec2-output" {
+    nkwnd
   
 }
