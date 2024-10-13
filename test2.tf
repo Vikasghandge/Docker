@@ -1,5 +1,5 @@
 provider "aws" {
     region = "value"
 }
-resource "" "name" {
+resource "aws_in" "name" {
 }
