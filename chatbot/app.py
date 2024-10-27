@@ -37,7 +37,7 @@ qa_pairs = {
     "What is serverless architecture?": "Serverless architecture allows you to build and run applications without managing server infrastructure."
 }
 
-@app.route('/chat', methods=['POST'])
+# @app.route('/chat', methods=['POST'])
 @app.route('/chat', methods=['POST'])
 
 def chat():
