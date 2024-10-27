@@ -38,6 +38,8 @@ qa_pairs = {
 }
 
 @app.route('/chat', methods=['POST'])
+@app.route('/chat', methods=['POST'])
+
 def chat():
     user_message = request.json.get('message')
     response = qa_pairs.get(user_message, "I'm sorry, I don't understand that question.")
