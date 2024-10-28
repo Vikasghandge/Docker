@@ -1,23 +1,27 @@
 pipeline {
-  agent any
-  stages {
-    stage('Build') {
-      steps {
-        echo "building"
-        sleep 10
-      }
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building the application...'
+                sh 'make build'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+                sh 'make test'
+            }
+        }
     }
-    stage('Test') {
-      steps {
-        echo "testing"
-        sleep 30
-      }
+
+    post {
+        success {
+            echo 'Build and Test completed successfully!'
+        }
+        failure {
+            echo 'Build and Test failed.'
+        }
     }
-    stage('Deploy') {
-      steps {
-        echo "deploying"
-        stageMessage "sample stage message"
-      }
-    }
-  }
 }
