@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  web:
+    build: ./web
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+      - cache
+
+  db:
+    build: ./db
+    ports:
+      - "5432:5432"
+
+  cache:
+    build: ./cache
+    ports:
+      - "6379:6379"
