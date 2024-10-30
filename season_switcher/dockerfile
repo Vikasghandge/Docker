@@ -1,7 +1,7 @@
 FROM nginx:alpine
 
-COPY  seaason.html /usr/share/nginx/html/index.html
-COPY counter.css /usr/share/nginx/html/
+COPY  season.html /usr/share/nginx/html/index.html
+COPY season.css /usr/share/nginx/html/
 COPY counter.js /usr/share/nginx/html/
 
 EXPOSE 80
