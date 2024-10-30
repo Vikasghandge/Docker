@@ -1,6 +1,6 @@
 FROM nginx:alpine
 
-COPY  counter.html /usr/share/nginx/html/index.html
+COPY  c.html /usr/share/nginx/html/index.html
 COPY counter.css /usr/share/nginx/html/
 COPY counter.js /usr/share/nginx/html/
 
