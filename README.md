@@ -14,3 +14,4 @@ This module provisions an AWS EC2 instance.
 
 - `instance_id`: The ID of the EC2 instance.
 - `public_ip`: The public IP of the EC2 instance.
+..
