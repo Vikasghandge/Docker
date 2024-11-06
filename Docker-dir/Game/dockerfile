@@ -1,4 +1,0 @@
-FROM ubuntu:lastest
-LABEL game="playing-game"
-RUN  apt update
-RUN apt-get install nginx 
