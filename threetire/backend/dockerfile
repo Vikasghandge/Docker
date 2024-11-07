@@ -8,7 +8,7 @@ LABEL purpose="backend"
 WORKDIR /opt
 
 # Add Tomcat zip to /opt directory
-ADD https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.93/bin/apache-tomcat-9.0.93.zip /opt
+ADD https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.93/bin/apache-tomcat-9.0.93.zip /opt
 
 # Install required packages and unzip Tomcat
 RUN apt update && \
