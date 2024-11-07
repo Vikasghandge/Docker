@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  todo:
+    build:
+      context: ./dockertodo
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - mynetwork
+
+  traffic_light:
+    build:
+      context: ./traffic
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    networks:
+      - mynetwork
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: nginx:alpine
+    volumes:
+      - ./frontend/frontend.html:/usr/share/nginx/html/index.html
+    ports:
+      - "80:80"
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
+
