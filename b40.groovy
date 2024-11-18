@@ -20,7 +20,7 @@ pipeline {
                     sh '''
                         echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
                         docker tag traffic_light_image $DOCKER_USER/season_switcher_image:latest
-                        docker push $DOCKER_USER/season_switcher_image:latest
+                        docker push $DOCKER_USER/traffic_light_image:latest
                     '''
                 }
             }
