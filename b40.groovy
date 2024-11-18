@@ -10,7 +10,7 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                sh 'docker build -t season_switcher_image ./season_switcher'
+                sh 'docker build -t season_switcher_image ./traffic_light'
             }
         }
 
