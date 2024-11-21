@@ -1,1 +1,36 @@
+# Base image
+FROM ubuntu:latest
+
+# Metadata
+LABEL purpose="backend"
+
+# Set the working directory
+WORKDIR /opt
+
+# Download and unzip Tomcat
+ADD https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.93/bin/apache-tomcat-9.0.93.zip /opt
+
+# Install required packages
+RUN apt update && \
+    apt install -y unzip openjdk-11-jdk wget && \
+    unzip apache-tomcat-9.0.93.zip && \
+    rm apache-tomcat-9.0.93.zip
+
+# Add student.war to Tomcat's webapps directory
+ADD https://s3-us-west-2.amazonaws.com/studentapi-cit/student.war apache-tomcat-9.0.93/webapps/
+
+# Download MySQL connector to Tomcat lib directory
+ADD https://s3-us-west-2.amazonaws.com/studentapi-cit/mysql-connector.jar apache-tomcat-9.0.93/lib
+
+# Copy context.xml into Tomcat conf directory
+COPY context.xml apache-tomcat-9.0.93/conf/
+
+# Grant execution permissions to Tomcat scripts
+RUN chmod +x apache-tomcat-9.0.93/bin/*.sh
+
+# Expose port 8080 for the application
+EXPOSE 8080
+
+# Start Tomcat server
+CMD ["apache-tomcat-9.0.93/bin/catalina.sh", "run"]
 
