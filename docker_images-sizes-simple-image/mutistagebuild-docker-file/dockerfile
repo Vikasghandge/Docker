@@ -1,0 +1,24 @@
+#### this is example of multi-stage docker file where our simple docker file size had 130MB using 
+## multistage buildwe have reduce size of image upto 50Mb size of this image is near about 80MB
+
+# Stage 1: Builder Stage
+FROM ubuntu:latest as builder
+
+# Install nginx in the builder stage
+RUN apt-get update -y && apt-get install -y nginx
+
+# Stage 2: Minimal Runtime Stage
+FROM ubuntu:latest
+
+# Copy the nginx installation from the builder stage
+COPY --from=builder /etc/nginx /etc/nginx
+COPY --from=builder /usr/sbin/nginx /usr/sbin/nginx
+COPY --from=builder /usr/share/nginx /usr/share/nginx
+COPY --from=builder /var/log/nginx /var/log/nginx
+COPY --from=builder /var/lib/nginx /var/lib/nginx
+
+# Expose port 80
+EXPOSE 80
+
+# Command to run nginx
+CMD ["nginx", "-g", "daemon off;"]

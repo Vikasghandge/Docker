@@ -1,0 +1,24 @@
+## this is a example of distroless image where we have reduced size of image up to more than 
+## 90Mb out of 130 the size of image is now 21Mb
+
+# Stage 1: Builder Stage
+FROM ubuntu:latest as builder
+
+# Install nginx and its dependencies
+RUN apt-get update -y && apt-get install -y nginx
+
+# Stage 2: Distroless Runtime Stage
+FROM gcr.io/distroless/base-debian11
+
+# Copy the nginx binary and configuration files from the builder stage
+COPY --from=builder /usr/sbin/nginx /usr/sbin/nginx
+COPY --from=builder /etc/nginx /etc/nginx
+COPY --from=builder /usr/share/nginx /usr/share/nginx
+COPY --from=builder /var/log/nginx /var/log/nginx
+COPY --from=builder /var/lib/nginx /var/lib/nginx
+
+# Expose port 80
+EXPOSE 80
+
+# Command to start nginx in the foreground
+CMD ["/usr/sbin/nginx", "-g", "daemon off;"]

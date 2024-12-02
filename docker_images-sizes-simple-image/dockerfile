@@ -1,0 +1,8 @@
+### this is simple docker file the size of this image is approximate 130MB
+
+FROM ubuntu:latest
+RUN apt-get update -y && apt install nginx -y
+#RUN systemctl start nginx
+#RUN systemctl enable nginx
+EXPOSE 80
+CMD ["nginx", "-g", "daemonoff;"]
