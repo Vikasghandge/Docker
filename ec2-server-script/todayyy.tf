@@ -4,7 +4,7 @@ provider "aws" {
 
 resource "aws_instance" "my_new_instance" {  # Fixed resource name
   ami           = "ami-0e35ddab05955cf57"  # Ensure this AMI exists in ap-south-1
-  instance_type = "t2.micro"
+  instance_type = "t2.small"
 
   tags = {
     Name = "Terraform-EC2"
