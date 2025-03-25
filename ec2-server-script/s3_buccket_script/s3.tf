@@ -13,6 +13,6 @@ resource "aws_s3_bucket" "demo" {
 
 tags = {
     Name = "demo-buccket"
-    Ensure
+    Environment = "prod"
 }    
 }
