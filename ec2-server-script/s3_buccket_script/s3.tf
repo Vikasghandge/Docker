@@ -12,6 +12,7 @@ resource "aws_s3_bucket" "demo" {
     bucket = "dmobuccketuniq"
 
 tags = {
-    Name =
+    Name = "demo-buccket"
+    Ensure
 }    
 }
