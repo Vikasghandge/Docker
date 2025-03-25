@@ -1,0 +1,2 @@
+resource "aws" "name" {
+}
