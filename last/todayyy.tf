@@ -11,6 +11,3 @@ resource "aws_instance" "my_new_instance" {  # Fixed resource name
   }
 }
 
-variable "region" {
-  var
-}
