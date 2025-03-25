@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "demo" {
-    bucket = "pohebuccket_dhiraj"
+    bucket = "pohebuccketdhiraj"
     
     tags = {
       "name" = "s3-buccket-today"
