@@ -10,3 +10,6 @@ resource "aws_instance" "my_new_instance" {  # Fixed resource name
     Name = "Terraform-EC2"
   }
 }
+
+variable "" {
+}
