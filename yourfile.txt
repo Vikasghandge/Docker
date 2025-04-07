@@ -7,4 +7,5 @@ snsfjbsf
 
 echo "enter your number"
 read number
-if ("$number -gt 7")
+if ("$number -gt 7"); then 
+echo ""
