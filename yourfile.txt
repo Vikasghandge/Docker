@@ -5,4 +5,4 @@ dbvbdjfbsf
 snsfjbsf
 
 
-echo 
+echo "enter your number"
