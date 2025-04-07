@@ -9,3 +9,5 @@ echo "enter your number"
 read number
 if ("$number -gt 7"); then 
 echo "number is greater than seven"
+else 
+       echo "nuber is "
