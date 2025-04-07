@@ -10,4 +10,5 @@ read number
 if ("$number -gt 7"); then 
 echo "number is greater than seven"
 else 
-       echo "nuber is "
+       echo "nuber is less smaller tahn 7"
+       fi
