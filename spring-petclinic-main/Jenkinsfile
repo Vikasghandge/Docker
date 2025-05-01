@@ -1,25 +1,86 @@
-pipeline {
-  agent any
-  stages {
-    stage('Maven Install') {
-      agent {
-        docker {
-          image 'maven:3.8.6-jdk-17'  // Use a valid Maven image with JDK 17
-        }
-      }
-      steps {
-        dir('spring-petclinic-main') {
-          sh 'mvn clean install'
-        }
-      }
-    }
-    stage('Docker Build') {
-      agent any
-      steps {
-        dir('spring-petclinic-main') {
-          sh 'docker build -t vikasghandge/spring-petclinic:latest .'
-        }
-      }
-    }
-  }
-}
+Started by GitHub push by Vikasghandge
+Obtained spring-petclinic-main/Jenkinsfile from git https://github.com/Vikasghandge/Docker.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/new11
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+The recommended git tool is: git
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/new11/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/Vikasghandge/Docker.git # timeout=10
+Fetching upstream changes from https://github.com/Vikasghandge/Docker.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.43.0'
+ > git fetch --tags --force --progress -- https://github.com/Vikasghandge/Docker.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 55c4c6a8287ef76f128fd2f31d1a6087da5a428d (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 55c4c6a8287ef76f128fd2f31d1a6087da5a428d # timeout=10
+Commit message: "--- Auto Git Commit ---"
+ > git rev-list --no-walk 61e0ac040d52139535610d64202e72e80d22849a # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Maven Install)
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/new11@2
+[Pipeline] {
+[Pipeline] checkout
+The recommended git tool is: git
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/new11@2/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/Vikasghandge/Docker.git # timeout=10
+Fetching upstream changes from https://github.com/Vikasghandge/Docker.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.43.0'
+ > git fetch --tags --force --progress -- https://github.com/Vikasghandge/Docker.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 55c4c6a8287ef76f128fd2f31d1a6087da5a428d (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 55c4c6a8287ef76f128fd2f31d1a6087da5a428d # timeout=10
+Commit message: "--- Auto Git Commit ---"
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ docker inspect -f . maven:3.8.6-jdk-17
+
+Error: No such object: maven:3.8.6-jdk-17
+[Pipeline] isUnix
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ docker pull maven:3.8.6-jdk-17
+Error response from daemon: manifest for maven:3.8.6-jdk-17 not found: manifest unknown: manifest unknown
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Docker Build)
+Stage "Docker Build" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+ERROR: script returned exit code 1
+Finished: FAILURE
