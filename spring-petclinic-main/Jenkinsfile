@@ -1,0 +1,31 @@
+pipeline {
+  agent any
+  stages {
+    stage('Checkout SCM') {
+      steps {
+        checkout scm
+      }
+    }
+    stage('Maven Build') {
+      steps {
+        script {
+          // Navigate to the directory containing pom.xml and run Maven
+          dir('spring-petclinic-main') {
+            sh 'mvn clean install'
+          }
+        }
+      }
+    }
+    stage('Docker Build') {
+      steps {
+        script {
+          // Ensure the JAR file exists before starting Docker build
+          dir('spring-petclinic-main') {
+            sh 'ls -la target/spring-petclinic-1.5.1.jar'
+            sh 'docker build -t vikasghandge/spring-petclinic:latest .'
+          }
+        }
+      }
+    }
+  }
+}
