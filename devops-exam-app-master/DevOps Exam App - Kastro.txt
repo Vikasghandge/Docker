@@ -122,7 +122,7 @@ Make sure to Login to DockerHub account in browser
 
 Goto MobaXTerm Terminal ---> Login to DockerHub ---> docker login -u <DockerHubUserName> ---> Click Enter ---> Enter the password of DockerHub ---> 
 
-Installation of Docker Scout ---> curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s -- -b /usr/local/bin ---> Give the permission to dockerScout to execute the file ---> sudo chmod 777 /var/run/docker.sock
+Installation of Docker Scout --->  | sh -s -- -b /usr/loccurl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.shal/bin ---> Give the permission to dockerScout to execute the file ---> sudo chmod 777 /var/run/docker.sock
 
 ************************************
 7. Installation of SonarQube
