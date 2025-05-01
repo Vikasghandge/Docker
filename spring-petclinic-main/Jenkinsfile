@@ -1,22 +1,23 @@
 pipeline {
   agent any
   stages {
-    stage('Maven Install') {
-      agent {
-        docker {
-          image 'maven:3.8.6-openjdk'  // Use the verified Maven image
-        }
-      }
+    stage('Checkout SCM') {
       steps {
-        dir('spring-petclinic-main') {
+        checkout scm
+      }
+    }
+    stage('Maven Install') {
+      steps {
+        script {
+          // Use Maven installed on the Jenkins server with the system JDK (OpenJDK 21)
           sh 'mvn clean install'
         }
       }
     }
     stage('Docker Build') {
-      agent any
       steps {
-        dir('spring-petclinic-main') {
+        script {
+          // Assuming your Dockerfile is in the root of the repo
           sh 'docker build -t vikasghandge/spring-petclinic:latest .'
         }
       }
