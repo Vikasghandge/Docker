@@ -9,16 +9,20 @@ pipeline {
     stage('Maven Install') {
       steps {
         script {
-          // Use Maven installed on the Jenkins server with the system JDK (OpenJDK 21)
-          sh 'mvn clean install'
+          // Navigate to the directory containing pom.xml and run Maven
+          dir('spring-petclinic') {
+            sh 'mvn clean install'
+          }
         }
       }
     }
     stage('Docker Build') {
       steps {
         script {
-          // Assuming your Dockerfile is in the root of the repo
-          sh 'docker build -t vikasghandge/spring-petclinic:latest .'
+          // Build Docker image in the correct directory
+          dir('spring-petclinic') {
+            sh 'docker build -t vikasghandge/spring-petclinic:latest .'
+          }
         }
       }
     }
