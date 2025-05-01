@@ -10,7 +10,7 @@ pipeline {
       steps {
         script {
           // Navigate to the directory containing pom.xml and run Maven
-          dir('spring-petclinic') {
+          dir('spring-petclinic-main') {
             sh 'mvn clean install'
           }
         }
@@ -20,7 +20,7 @@ pipeline {
       steps {
         script {
           // Build Docker image in the correct directory
-          dir('spring-petclinic') {
+          dir('spring-petclinic-main') {
             sh 'docker build -t vikasghandge/spring-petclinic:latest .'
           }
         }
@@ -28,3 +28,4 @@ pipeline {
     }
   }
 }
+
