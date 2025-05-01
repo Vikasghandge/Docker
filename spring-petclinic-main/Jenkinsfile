@@ -4,8 +4,7 @@ pipeline {
     stage('Maven Install') {
       agent {
         docker {
-          image 'maven:3.8.7-openjdk-17' 
-            args '-v /root/.m2:/root/.m2' // Use the valid Maven image with JDK 17
+          image 'maven:3.8.6-openjdk'  // Use the verified Maven image
         }
       }
       steps {
