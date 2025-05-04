@@ -78,21 +78,7 @@ pipeline {
             }
         }
 
-        stage('Docker Build & Push') {
-            steps {
-                script {
-                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
-                        sh ''' 
-                        echo "Building Docker image..."
-                        docker build --no-cache -t $DOCKER_IMAGE -f bookmyshow-app/Dockerfile bookmyshow-app
-
-                        echo "Pushing Docker image to Docker Hub..."
-                        docker push $DOCKER_IMAGE
-                        '''
-                    }
-                }
-            }
-        }
+        
 
         stage('Deploy to EKS Cluster') {
             steps {
