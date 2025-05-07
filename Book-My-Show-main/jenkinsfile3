@@ -1,6 +1,6 @@
 
 
-##### its jenkins file without sonarqube for eks cluster.   
+ // ##### its jenkins file without sonarqube for eks cluster.   
 
 
 pipeline {
