@@ -237,30 +237,32 @@ pipeline {
         }
 
         stage('Deploy to EKS Cluster') {
-            steps {
-                script {
-                    sh '''#!/bin/bash
-                        echo "Verifying AWS credentials..."
-                        aws sts get-caller-identity
+    steps {
+        dir('devops-exam-app-master') {
+            script {
+                sh '''#!/bin/bash
+                    echo "Verifying AWS credentials..."
+                    aws sts get-caller-identity
 
-                        echo "Configuring kubectl for EKS cluster..."
-                        aws eks update-kubeconfig --name ${CLUSTER_NAME} --region ${REGION}
+                    echo "Configuring kubectl for EKS cluster..."
+                    aws eks update-kubeconfig --name ${CLUSTER_NAME} --region ${REGION}
 
-                        echo "Verifying kubeconfig..."
-                        kubectl config current-context
+                    echo "Verifying kubeconfig..."
+                    kubectl config current-context
 
-                        echo "Deploying application to EKS..."
-                        kubectl apply -f deployment.yml
-                        kubectl apply -f service.yml
+                    echo "Deploying application to EKS..."
+                    kubectl apply -f deployment.yml
+                    kubectl apply -f service.yml
 
-                        echo "Verifying deployment..."
-                        kubectl get pods
-                        kubectl get svc
-                    '''
-                }
+                    echo "Verifying deployment..."
+                    kubectl get pods
+                    kubectl get svc
+                '''
             }
         }
     }
+}
+
 
     post {
         success {
