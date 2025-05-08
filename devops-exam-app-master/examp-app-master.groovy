@@ -151,5 +151,5 @@ pipeline {
 ---------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------
-// this is another pipeline for devops-exam-master-app to deploy a application on kubernete
+// this is another pipeline for devops-exam-master-app to deploy a application on kubernete cluster.
 //
