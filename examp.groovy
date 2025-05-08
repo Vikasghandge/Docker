@@ -5,7 +5,7 @@ pipeline {
         DOCKER_IMAGE = "ghandgevikas/devopsexamapp:latest"
         SCANNER_HOME = tool 'sonar-scanner'
         CLUSTER_NAME = "my-eks"
-        REGION = ""
+        REGION = "ap-south-1"
     }
 
     stages {
