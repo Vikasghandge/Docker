@@ -4,7 +4,8 @@ pipeline {
     environment {
         DOCKER_IMAGE = "ghandgevikas/devopsexamapp:latest"
         SCANNER_HOME = tool 'sonar-scanner'
-        CLUSTER_NAME = ""
+        CLUSTER_NAME = "my-eks"
+        
     }
 
     stages {
