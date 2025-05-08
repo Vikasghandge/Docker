@@ -230,35 +230,5 @@ pipeline {
                     sh '''
                         docker compose ps -a
                         echo "Testing Flask endpoint:"
-                        curl -I http://localhost:5000 || true
-                    '''
-                }
-            }
-        }
-
-        stage('Deploy to EKS Cluster') {
-    steps {
-        dir('devops-exam-app-master') {
-            script {
-                sh '''#!/bin/bash
-                    echo "Verifying AWS credentials..."
-                    aws sts get-caller-identity
-
-                    echo "Configuring kubectl for EKS cluster..."
-                    aws eks update-kubeconfig --name ${CLUSTER_NAME} --region ${REGION}
-
-                    echo "Verifying kubeconfig..."
-                    kubectl config current-context
-
-                    echo "Deploying application to EKS..."
-                    kubectl apply -f deployment.yml
-                    kubectl apply -f service.yml
-
-                    echo "Verifying deployment..."
-                    kubectl get pods
-                    kubectl get svc
-                '''
-            }
-        }
-    }
+                        curl -I http://localhost
 
