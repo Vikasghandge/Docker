@@ -210,25 +210,5 @@ pipeline {
                             if docker compose exec mysql mysqladmin ping -uroot -prootpass --silent; then
                                 echo "MySQL ready!"
                                 break
-                            fi
-                            echo "Attempt $i/24: MySQL not ready"
-                            docker compose logs mysql --tail=5 || true
-                            sleep 5
-                            if [ $i -eq 24 ]; then
-                                echo "ERROR: MySQL failed to start"
-                                exit 1
-                            fi
-                        done
-                    '''
-                }
-            }
-        }
-
-        stage('Verify Deployment') {
-            steps {
-                dir('devops-exam-app-master') {
-                    sh '''
-                        docker compose ps -a
-                        echo "Testing Flask endpoint:"
-                        curl -I http://localhost
+                     
 
