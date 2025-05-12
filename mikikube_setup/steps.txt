@@ -34,4 +34,4 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plug
 -------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------
 
-then you need to install kubectl command
+# tthen you need to install kubectl command
