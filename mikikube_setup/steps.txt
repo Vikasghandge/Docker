@@ -1,3 +1,4 @@
 
 
-# steps to setups minikube with 
+# steps to setups minikube cluster with docker.
+step
