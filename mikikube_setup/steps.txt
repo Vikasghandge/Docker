@@ -3,7 +3,7 @@
 # steps to setups minikube cluster with docker.
 step-1 install docker 
 
-#/bin/bash
+-----------------------------------------------------------------------------------------
 #!/bin/bash
 
 # Update package manager repositories
