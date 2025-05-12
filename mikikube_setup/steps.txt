@@ -60,7 +60,7 @@ minikube version
 # run this command start minikube
 minikube start --driver=docker
 if you got any error 
-
+switch as non root user 
 
 ----------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------
