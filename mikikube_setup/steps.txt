@@ -62,7 +62,7 @@ minikube start --driver=docker
 if you got any error 
 switch as non root user 
 then add $USER into the docker group 
-usermod 
+usermod -aG docker $
 
 ----------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------
