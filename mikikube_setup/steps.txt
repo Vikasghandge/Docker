@@ -49,4 +49,6 @@ kubectl version --short --client
 
 # steps to install minikube.
 
-#!/n
+#!/bin/bash
+
+
