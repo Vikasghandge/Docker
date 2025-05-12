@@ -63,6 +63,8 @@ if you got any error
 switch as non root user 
 then add $USER into the docker group 
 usermod -aG docker $USER 
+kubectl get nodes -o wide
+kubectl get pods -n kube-system -o wide
 
 
 
