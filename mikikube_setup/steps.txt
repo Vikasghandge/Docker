@@ -37,4 +37,6 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plug
 # step -2 then you need to install kubectl command
 install kubectl command to interact with cluster.
 
+#/bin/bash
+
 
