@@ -3,3 +3,4 @@ sudo
 chmod
 etc
 buildx
+usermod
